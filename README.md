@@ -11,4 +11,10 @@ Repro case for a bug in WinForms (net48 &amp; netcoreapp3.1)
 6. Repeat with net48 and netcoreapp3.1 builds
     * Note that the first rows in the table has two of the controls swapped.
     
-__N.B.__ Using quirks to disable the new Accessibility features in .Net 4.8 will restore the correct behaviour.  
+__N.B.__ Using quirks to disable the new Accessibility features in .Net 4.8 will restore the correct behaviour.
+``` xml
+  <runtime>
+    <!-- Disable .Net 4.8 Accessibility changes -->
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures.3=true" />
+  </runtime>
+```
